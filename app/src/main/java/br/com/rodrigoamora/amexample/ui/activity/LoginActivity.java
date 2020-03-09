@@ -1,5 +1,7 @@
 package br.com.rodrigoamora.amexample.ui.activity;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +30,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
+        String login = inputLogin.getText().toString();
+        String senha = inputSenha.getText().toString();
+        String authToken = "br.com.rodrigoamora.amexample";
+        createAccount(login, senha, authToken);
+    }
 
+    private void createAccount(String email, String password, String authToken) {
+        Account account = new Account(email, "account_type");
+
+        AccountManager am = AccountManager.get(this);
+        am.addAccountExplicitly(account, password, null);
+        am.setAuthToken(account, "full_access", authToken);
     }
 }
