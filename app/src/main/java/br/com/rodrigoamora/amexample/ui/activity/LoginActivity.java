@@ -30,7 +30,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         inputLogin = findViewById(R.id.input_login);
         inputSenha = findViewById(R.id.input_senha);
 
-        accountType = getIntent().getStringExtra(AccountManager.KEY_ACCOUNT_TYPE);
+        //accountType = getIntent().getStringExtra(AccountManager.KEY_ACCOUNT_TYPE);
+        accountType = getString(R.string.account_type);
     }
 
     @Override
@@ -42,12 +43,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         createAccount(login, senha, authToken);
     }
 
-    private void login() {
-
-    }
-
     private void createAccount(String email, String password, String authToken) {
-        String accountType = getString(R.string.account_type);
         Account account = new Account(email, accountType);
 
         Bundle data = new Bundle();
