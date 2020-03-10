@@ -17,6 +17,7 @@
     <string name="menu_send">Send</string>
 
     <string name="account_type">br.com.rodrigoamora.amexample</string>
+    <string name="email_invalido">E-mail inválido</string>
     <string name="logar">Logar</string>
     <string name="login">Login</string>
     <string name="senha">Senha</string>

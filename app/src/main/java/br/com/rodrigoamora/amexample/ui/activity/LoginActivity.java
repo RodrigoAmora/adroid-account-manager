@@ -11,6 +11,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.rodrigoamora.amexample.R;
+import br.com.rodrigoamora.amexample.validator.EmailValidator;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,7 +41,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String senha = inputSenha.getText().toString();
         String authToken = " xhjcvsjhdvcvjdhcgvsgchk";
 
-        createAccount(login, senha, authToken);
+        if (EmailValidator.validate(login) && !senha.isEmpty()) {
+            createAccount(login, senha, authToken);
+        }
     }
 
     private void createAccount(String email, String password, String authToken) {
