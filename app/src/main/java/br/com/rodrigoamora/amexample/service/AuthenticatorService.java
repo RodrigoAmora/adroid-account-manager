@@ -14,7 +14,6 @@ public class AuthenticatorService extends Service {
 
     @Override
     public void onCreate() {
-        // Create a new authenticator object
         mAuthenticator = new Authenticator(this);
     }
 

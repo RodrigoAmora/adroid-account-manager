@@ -29,17 +29,9 @@ public class Authenticator extends AbstractAccountAuthenticator {
     @Override
     public Bundle addAccount(AccountAuthenticatorResponse accountAuthenticatorResponse, String accountType, String authTokenType, String[] requiredFeatures, Bundle options) throws NetworkErrorException {
         final Intent intent = new Intent(context, MainActivity.class);
-
-        // This key can be anything. Try to use your domain/package
         intent.putExtra("account_type", accountType);
-
-        // This key can be anything too. It's just a way of identifying the token's type (used when there are multiple permissions)
         intent.putExtra("full_access", authTokenType);
-
-        // This key can be anything too. Used for your reference. Can skip it too.
         intent.putExtra("is_adding_new_account", true);
-
-        // Copy this exactly from the line below.
         intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, accountAuthenticatorResponse);
 
         final Bundle bundle = new Bundle();
