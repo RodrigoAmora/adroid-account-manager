@@ -5,12 +5,14 @@ import android.accounts.AccountAuthenticatorActivity;
 import android.accounts.AccountManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import br.com.rodrigoamora.amexample.R;
+import br.com.rodrigoamora.amexample.validator.EmailValidator;
 
 public class LoginActivity extends AccountAuthenticatorActivity implements View.OnClickListener {
 
@@ -50,12 +52,12 @@ public class LoginActivity extends AccountAuthenticatorActivity implements View.
         String login = inputLogin.getText().toString();
         String senha = inputSenha.getText().toString();
         String authToken = "xhjcvsjhdvcvjdhcgvsgchk";
-        createAccount(login, senha, authToken);
-        /*
-        if (EmailValidator.validate(login) && !senha.isEmpty()) {
+
+        if (EmailValidator.validate(login)) {
             createAccount(login, senha, authToken);
+        } else {
+            Snackbar.make(btOk, getString(R.string.error_invalid_email), Snackbar.LENGTH_LONG).show();
         }
-         */
     }
 
     private void createAccount(String email, String password, String authToken) {
