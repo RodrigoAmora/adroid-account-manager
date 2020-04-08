@@ -53,6 +53,11 @@ public class LoginActivity extends AccountAuthenticatorActivity implements View.
         String senha = inputSenha.getText().toString();
         String authToken = "xhjcvsjhdvcvjdhcgvsgchk";
 
+        if (senha.isEmpty()) {
+            Snackbar.make(btOk, getString(R.string.error_password_is_empty), Snackbar.LENGTH_LONG).show();
+            return;
+        }
+
         if (EmailValidator.validate(login)) {
             createAccount(login, senha, authToken);
         } else {

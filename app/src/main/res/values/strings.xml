@@ -21,6 +21,7 @@
 
     <!-- ERROR -->
     <string name="error_invalid_email">Invalid e-mail!</string>
+    <string name="error_password_is_empty">Passowrd is empty!</string>
 
 
     <!-- STRINGS -->
