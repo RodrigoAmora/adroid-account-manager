@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">Account Manager Example</string>
 
+    <!-- NAVIGATION -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+    <!-- ACTION -->
     <string name="action_settings">Settings</string>
 
+    <!-- MENU -->
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -16,9 +19,13 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
+    <!-- ERROR -->
+    <string name="error_invalid_email">Invalid e-mail!</string>
+
+
+    <!-- STRINGS -->
     <string name="account_type">br.com.rodrigoamora.amexample</string>
-    <string name="email_invalido">E-mail inválido</string>
-    <string name="logar">Logar</string>
-    <string name="login">Login</string>
-    <string name="senha">Senha</string>
+    <string name="email">Login</string>
+    <string name="login">LogIn</string>
+    <string name="password">Password</string>
 </resources>
