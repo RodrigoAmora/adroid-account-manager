@@ -7,16 +7,18 @@ public class EmailValidator {
 
         if (!email.contains("@")) {
             result = false;
+        } else {
+            String dominio = email.split("@")[1];
+            dominio = dominio.split(".")[0];
+            if (dominio.isEmpty()) {
+                result = false;
+            }
         }
+
         if (!email.contains(".com")) {
             result = false;
         }
 
-        String dominio = email.split("@")[0];
-        dominio = dominio.split(".")[0];
-        if (dominio.isEmpty()) {
-            result = false;
-        }
         return result;
     }
 }
