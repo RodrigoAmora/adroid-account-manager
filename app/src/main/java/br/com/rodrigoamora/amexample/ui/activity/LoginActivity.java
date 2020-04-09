@@ -12,6 +12,7 @@ import android.widget.EditText;
 import com.google.android.material.snackbar.Snackbar;
 
 import br.com.rodrigoamora.amexample.R;
+import br.com.rodrigoamora.amexample.util.Util;
 import br.com.rodrigoamora.amexample.validator.EmailValidator;
 
 public class LoginActivity extends AccountAuthenticatorActivity implements View.OnClickListener {
@@ -53,6 +54,7 @@ public class LoginActivity extends AccountAuthenticatorActivity implements View.
     }
 
     private void login() {
+        Util.hideKeyBoard(this, btOk);
         String login = inputLogin.getText().toString();
         String password = inputPassword.getText().toString();
         String authToken = "xhjcvsjhdvcvjdhcgvsgchk";
