@@ -64,11 +64,6 @@ public class Authenticator extends AbstractAccountAuthenticator {
             return result;
         }
 
-        // If you reach here, person needs to login again. or sign up
-
-        // If we get here, then we couldn't access the user's password - so we
-        // need to re-prompt them for their credentials. We do that by creating
-        // an intent to display our AuthenticatorActivity which is the AccountsActivity in my case.
         final Intent intent = new Intent(context, MainActivity.class);
         intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, accountAuthenticatorResponse);
         intent.putExtra("account_type", account.type);
