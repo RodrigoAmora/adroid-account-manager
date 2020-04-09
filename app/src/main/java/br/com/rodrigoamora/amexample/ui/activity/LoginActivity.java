@@ -17,7 +17,7 @@ import br.com.rodrigoamora.amexample.validator.EmailValidator;
 public class LoginActivity extends AccountAuthenticatorActivity implements View.OnClickListener {
 
     private Button btOk;
-    private EditText inputLogin, inputSenha;
+    private EditText inputLogin, inputPassword;
 
     private String accountType;
 
@@ -32,7 +32,7 @@ public class LoginActivity extends AccountAuthenticatorActivity implements View.
         btOk.setOnClickListener(this);
 
         inputLogin = findViewById(R.id.input_login);
-        inputSenha = findViewById(R.id.input_senha);
+        inputPassword = findViewById(R.id.input_senha);
 
         accountType = getString(R.string.account_type);
     }
@@ -49,17 +49,21 @@ public class LoginActivity extends AccountAuthenticatorActivity implements View.
 
     @Override
     public void onClick(View view) {
+        login();
+    }
+
+    private void login() {
         String login = inputLogin.getText().toString();
-        String senha = inputSenha.getText().toString();
+        String password = inputPassword.getText().toString();
         String authToken = "xhjcvsjhdvcvjdhcgvsgchk";
 
-        if (senha.isEmpty()) {
+        if (password.isEmpty()) {
             Snackbar.make(btOk, getString(R.string.error_password_is_empty), Snackbar.LENGTH_LONG).show();
             return;
         }
 
         if (EmailValidator.validate(login)) {
-            createAccount(login, senha, authToken);
+            createAccount(login, password, authToken);
         } else {
             Snackbar.make(btOk, getString(R.string.error_invalid_email), Snackbar.LENGTH_LONG).show();
         }
