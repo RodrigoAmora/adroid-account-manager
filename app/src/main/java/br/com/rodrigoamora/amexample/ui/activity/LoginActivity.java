@@ -32,7 +32,7 @@ public class LoginActivity extends AccountAuthenticatorActivity implements View.
         btOk.setOnClickListener(this);
 
         inputLogin = findViewById(R.id.input_login);
-        inputPassword = findViewById(R.id.input_senha);
+        inputPassword = findViewById(R.id.input_password);
 
         accountType = getString(R.string.account_type);
     }
